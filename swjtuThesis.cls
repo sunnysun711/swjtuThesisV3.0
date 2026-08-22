@@ -107,6 +107,10 @@
 % 各节的三级（及以下）题序、款、项：小4号黑体，题序和标题之间空一格，不加标点
 \CTEXsetup[format = {\raggedright\zihao{-4}\heiti}, aftername = {\hspace{0.6\ccwd}}, numberformat = {\bfseries}]{subsubsection}
 \CTEXsetup[beforeskip = {12pt plus 2pt minus 2pt}, afterskip = {6pt plus 2pt minus 2pt}]{subsubsection}
+% ctexbook 继承 book 的默认值 secnumdepth = 2，subsubsection（层级 3）不编号，
+% 上面为 subsubsection 设的 numberformat 也就无从生效。此处放开到 3，
+% 使四级标题按 3.1.1.1 编号。目录仍保持三级（tocdepth 用默认值 2），避免过长。
+\setcounter{secnumdepth}{3}
 
 % V3.0更改——\tiny重定义为五号字体
 \RequirePackage{type1cm}

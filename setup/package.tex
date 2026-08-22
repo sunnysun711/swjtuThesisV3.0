@@ -30,6 +30,25 @@
 \usepackage{graphicx}
 \usepackage{subfig}
 
+% 矢量作图宏包（表格内条形图等）
+\usepackage{tikz}
+
+% 子图题注间距收紧（caption 宏包已由 swjtuThesis.cls 加载）
+\captionsetup[subfloat]{captionskip=2pt,farskip=2pt,nearskip=2pt}
+
+% 整页浮动体（figure[p]）默认上下居中，多子图大图会留出大片空白。
+% 下面把浮动页改为顶部对齐、余量全部丢到页底，避免行间被撑开。
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{10pt plus 1fil}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+% 允许一页最多被浮动体占满，减少「图被推到后面、正文留空」的情况
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}
+
 % TeX系列标识的正确输入宏包（实现正确插入TeX相关的字符串）
 \usepackage{dtk-logos}
 
